@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#02070C] text-white;
+    font-family: 'Magnetik', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .glass-box {
+    background: rgba(255, 255, 255, 0.015);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2.5px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.015);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2.5px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px currentColor;
+  }
+}
+
+@font-face {
+  font-family: 'Magnetik';
+  src: url('./assets/fonts/Magnetik-Thin.otf') format('opentype');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Magnetik';
+  src: url('./assets/fonts/Magnetik-Light.otf') format('opentype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Magnetik';
+  src: url('./assets/fonts/Magnetik-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Magnetik';
+  src: url('./assets/fonts/Magnetik-Medium.otf') format('opentype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Magnetik';
+  src: url('./assets/fonts/Magnetik-SemiBold.otf') format('opentype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Magnetik';
+  src: url('./assets/fonts/Magnetik-Heavy.otf') format('opentype');
+  font-weight: 800;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  background: #02070C;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+/* Range Slider */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+input[type=range]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  border: none;
+}
+
+/* Animations */
+@keyframes pulse {
+  from { opacity: 0.1; }
+  to { opacity: 0.6; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Bintang kecil yang berkedip cepat */
+.star-fast {
+  animation: pulse 0.8s infinite alternate ease-in-out;
+}
+
+.star-slow {
+  animation: pulse 2.5s infinite alternate ease-in-out;
+}
+
+.star-delayed {
+  animation: pulse 1.5s infinite alternate ease-in-out;
+  animation-delay: 0.7s; /* Menunda animasi selama 0.7 detik */
+}
+
+.animate-spin-slow {
+  animation: spin 1.5s linear infinite;
+}
+
