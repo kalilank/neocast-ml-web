@@ -100,7 +100,7 @@ export default function App() {
     try {
       const missDistanceKm = sliders.miss_distance * 149597870.7;
       const velocityKmH = sliders.relative_velocity;
-      const response = await fetch("http://127.0.0.1:8000/predict", {
+      const response = await fetch("https://soure-neocast-backend.hf.space/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
