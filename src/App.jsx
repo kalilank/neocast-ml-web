@@ -131,13 +131,48 @@ export default function App() {
 
   const models = ["Random Forest", "LightGBM", "XGBoost", "Ensemble"];
 
-  const sliderConfig = [
-    { key: "absolute_magnitude", label: "Absolute Magnitude", min: 0, max: 30.0, step: 0.1, fmt: (v) => v.toFixed(1) },
-    { key: "estimated_diameter_min", label: "Est. Diameter (Min)", min: 0, max: 2.0, step: 0.01, fmt: (v) => v.toFixed(3) },
-    { key: "estimated_diameter_max", label: "Est. Diameter (Max)", min: 0, max: 5.0, step: 0.01, fmt: (v) => v.toFixed(3) },
-    { key: "relative_velocity", label: "Relative Velocity (km/h)", min: 0, max: 150000, step: 100, fmt: (v) => v.toFixed(0) },
-    { key: "miss_distance", label: "Miss Distance (AU)", min: 0.001, max: 0.5, step: 0.001, fmt: (v) => v.toFixed(3) },
-  ];
+const sliderConfig = [
+  {
+    key: "absolute_magnitude",
+    label: "Absolute Magnitude",
+    min: 0,
+    max: 20.5,
+    step: 0.1,
+    fmt: (v) => v.toFixed(1),
+  },
+  {
+    key: "estimated_diameter_min",
+    label: "Est. Diameter (Min)",
+    min: 0,
+    max: 0.100,
+    step: 0.001,
+    fmt: (v) => v.toFixed(3),
+  },
+  {
+    key: "estimated_diameter_max",
+    label: "Est. Diameter (Max)",
+    min: 0,
+    max: 0.200,
+    step: 0.001,
+    fmt: (v) => v.toFixed(3),
+  },
+  {
+    key: "relative_velocity",
+    label: "Relative Velocity (km/h)",
+    min: 0,
+    max: 120000,
+    step: 100,
+    fmt: (v) => v.toFixed(0),
+  },
+  {
+    key: "miss_distance",
+    label: "Miss Distance (AU)",
+    min: 0.001,
+    max: 0.50,
+    step: 0.001,
+    fmt: (v) => v.toFixed(3),
+  },
+];
 
   const modelStats = [
     { name: "Random Forest", auc: "0.9009", acc: "88.76%", recall: "0.19", f1: "0.30", color: "#AFA9EC" },
